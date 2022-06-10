@@ -544,8 +544,10 @@
                 }
             })
             conceito = (nota / contador) * dg
-            $('#nota_final').empty().append(conceito.toFixed(2))
-            contador = 0
+            if(!isNaN(conceito)){
+                $('#nota_final').empty().append(conceito.toFixed(2))
+                contador = 0
+            }
         })
         $("#desempenho_global").change(function () {
             let valor = $(this).val();
