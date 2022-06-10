@@ -41,14 +41,18 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="container-fluid">
-    <h1>Simulação do Conceito</h1>
-    <p>Valores de cada pauta</p>
-    <p>Valor 8 -> Desempenho sempre acima do esperado na competência</p>
-    <p>Valor 7.14 -> Desempenho frequentemente acima do esperado na competência</p>
-    <p>Valor 6.73 -> Desempenho algumas vezes acima do esperado na competência</p>
-    <p>Valor 6.19 -> Desempenho esperado na competência</p>
-    <p>Valor 4.68 -> Desempenho algumas vezes abaixo do esperado na competência</p>
-    <p>Valor 3.74 -> Desempenho frequentemente abaixo do esperado na competência</p>
+        <header class="text-center text-primary fs-3 p-1" style="background-color: rgba(17, 13, 237, 0.2);">
+            <h1>Simulação do Conceito</h1>
+        </header>
+    <div>
+        <p>Valores de cada pauta</p>
+        <p>Valor 8 -> Desempenho sempre acima do esperado na competência</p>
+        <p>Valor 7.14 -> Desempenho frequentemente acima do esperado na competência</p>
+        <p>Valor 6.73 -> Desempenho algumas vezes acima do esperado na competência</p>
+        <p>Valor 6.19 -> Desempenho esperado na competência</p>
+        <p>Valor 4.68 -> Desempenho algumas vezes abaixo do esperado na competência</p>
+        <p>Valor 3.74 -> Desempenho frequentemente abaixo do esperado na competência</p>
+    </div>
     <hr>
     <label>Desempenho Global</label>
     <select class="form-select" id="desempenho_global">
@@ -510,7 +514,16 @@
             </td>
         </tr>
     </table>
-    <p class="sticky-bottom text-primary fs-1 text-end">Nota Final: <strong id="nota_final"></strong></p>
+    <footer class="sticky-bottom text-center text-primary fs-3 p-1" style="background-color: rgba(17, 13, 237, 0.2);">
+        <div class="row">
+            <div class="col">
+                <p class="text-start">Desenvolvido pelo 1º Sgt Ferreira</p>
+            </div>
+            <div class="col">
+                <p class="text-center">Nota Final: <strong id="nota_final"></strong></p>
+            </div>
+        </div>
+      </footer>
     </div>
     <script src="resources/jquery/dist/jquery.min.js"></script>
     <script>
