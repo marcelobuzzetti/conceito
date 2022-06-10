@@ -41,11 +41,15 @@
     <label>Desempenho Global</label>
     <select id="desempenho_global">
         <option value="1.25">Alto Desempenho</option>
-        <option value="1.19">Superios</option>
+        <option value="1.19">Superior</option>
         <option value="1.131">Adequado</option>
         <option value="1.07">Oportunidade de Melhoria</option>
+        <option value="0" selected disabled>Selecione uma Opção</option>
     </select>
-    <table>
+<!--     <button id="calcular">Calcular</button> -->
+<br>
+    <p>Nota: <strong id="nota_final"></strong></p>
+    <table style="display: none;">
         <tr>
             <th>Pauta</th>
             <th>Nota</th>
@@ -53,7 +57,7 @@
         </tr>
         <tr>
             <td>Camaradagem</td>
-            <td><select id="camaradagem_value">
+            <td><select class="pautas" id="camaradagem_value">
                     <option value="8">desempenho sempre acima do esperado na competência</option>
                     <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                     <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -64,12 +68,12 @@
                 </select>
             </td>
             <td>
-                <div id="camaradagem"></div>
+                <div class="resultado" id="camaradagem"></div>
             </td>
         </tr>
         <tr>
             <td>Dedicação</td>
-            <td><select id="dedicacao_value">
+            <td><select class="pautas" id="dedicacao_value">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -80,12 +84,12 @@
                 </select>
             </td>
             <td>
-                <div id="dedicacao"></div>
+                <div class="resultado" id="dedicacao"></div>
             </td>
         </tr>
         <tr>
             <td>Disciplina</td>
-            <td><select id="disciplina_value">
+            <td><select class="pautas" id="disciplina_value">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -96,12 +100,12 @@
                 </select>
             </td>
             <td>
-                <div id="disciplina"></div>
+                <div class="resultado" id="disciplina"></div>
             </td>
         </tr>
         <tr>
             <td>Iniciativa</td>
-            <td><select id="iniciativa_value">
+            <td><select class="pautas" id="iniciativa_value">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -112,12 +116,12 @@
                 </select>
             </td>
             <td>
-                <div id="iniciativa"></div>
+                <div class="resultado" id="iniciativa"></div>
             </td>
         </tr>
         <tr>
             <td>Integridade</td>
-            <td><select id="integridade_value">
+            <td><select class="pautas" id="integridade_value">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -128,12 +132,12 @@
                 </select>
             </td>
             <td>
-                <div id="integridade"></div>
+                <div class="resultado" id="integridade"></div>
             </td>
         </tr>
         <tr>
             <td>Resistência Física</td>
-            <td><select id="resistencia_fisica_value">
+            <td><select class="pautas" id="resistencia_fisica_value">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -144,12 +148,12 @@
                 </select>
             </td>
             <td>
-                <div id="resistencia_fisica"></div>
+                <div class="resultado" id="resistencia_fisica"></div>
             </td>
         </tr>
         <tr>
             <td>Responsabilidade</td>
-            <td><select id="responsabilidade_value">
+            <td><select class="pautas" id="responsabilidade_value">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -160,12 +164,12 @@
                 </select>
             </td>
             <td>
-                <div id="responsabilidade"></div>
+                <div class="resultado" id="responsabilidade"></div>
             </td>
         </tr>
         <tr>
             <td>Técnico-Profissional</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -176,12 +180,12 @@
                 </select>
             </td>
             <td>
-                <div id="tecnico_profissional"></div>
+                <div class="resultado" id="tecnico_profissional"></div>
             </td>
         </tr>
         <tr>
             <td>Autoaperfeiçoamento</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -192,12 +196,12 @@
                 </select>
             </td>
             <td>
-                <div id="autoaperfeicoamento"></div>
+                <div class="resultado" id="autoaperfeicoamento"></div>
             </td>
         </tr>
         <tr>
             <td>Comunicação</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -208,12 +212,12 @@
                 </select>
             </td>
             <td>
-                <div id="comunicacao"></div>
+                <div class="resultado" id="comunicacao"></div>
             </td>
         </tr>
         <tr>
             <td>Conhecimento Institucional</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -224,12 +228,12 @@
                 </select>
             </td>
             <td>
-                <div id="conhecimento_institucional"></div>
+                <div class="resultado" id="conhecimento_institucional"></div>
             </td>
         </tr>
         <tr>
             <td>Coragem Moral</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -240,12 +244,12 @@
                 </select>
             </td>
             <td>
-                <div id="coragem_moral"></div>
+                <div class="resultado" id="coragem_moral"></div>
             </td>
         </tr>
         <tr>
             <td>Criatividade</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -256,12 +260,12 @@
                 </select>
             </td>
             <td>
-                <div id="criatividade"></div>
+                <div class="resultado" id="criatividade"></div>
             </td>
         </tr>
         <tr>
             <td>Cultura Geral</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -272,12 +276,12 @@
                 </select>
             </td>
             <td>
-                <div id="cultura_geral"></div>
+                <div class="resultado" id="cultura_geral"></div>
             </td>
         </tr>
         <tr>
             <td>Direção e Controle</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -288,12 +292,12 @@
                 </select>
             </td>
             <td>
-                <div id="direcao_e_controle"></div>
+                <div class="resultado" id="direcao_e_controle"></div>
             </td>
         </tr>
         <tr>
             <td>Discrição</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -304,12 +308,12 @@
                 </select>
             </td>
             <td>
-                <div id="discricao"></div>
+                <div class="resultado" id="discricao"></div>
             </td>
         </tr>
         <tr>
             <td>Estabilidade Emocional</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -320,12 +324,12 @@
                 </select>
             </td>
             <td>
-                <div id="estabilidade_emocional"></div>
+                <div class="resultado" id="estabilidade_emocional"></div>
             </td>
         </tr>
         <tr>
             <td>Flexibilidade</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -336,12 +340,12 @@
                 </select>
             </td>
             <td>
-                <div id="flexibilidade"></div>
+                <div class="resultado" id="flexibilidade"></div>
             </td>
         </tr>
         <tr>
             <td>Liderança</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -352,12 +356,12 @@
                 </select>
             </td>
             <td>
-                <div id="lideranca"></div>
+                <div class="resultado" id="lideranca"></div>
             </td>
         </tr>
         <tr>
             <td>Objetividade</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -368,12 +372,12 @@
                 </select>
             </td>
             <td>
-                <div id="objetividade"></div>
+                <div class="resultado" id="objetividade"></div>
             </td>
         </tr>
         <tr>
             <td>Persistência</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -384,12 +388,12 @@
                 </select>
             </td>
             <td>
-                <div id="persistencia"></div>
+                <div class="resultado" id="persistencia"></div>
             </td>
         </tr>
         <tr>
             <td>Postura e Apresentação</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -400,12 +404,12 @@
                 </select>
             </td>
             <td>
-                <div id="postura_e_apresentação"></div>
+                <div class="resultado" id="postura_e_apresentação"></div>
             </td>
         </tr>
         <tr>
             <td>Produtividade</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -416,12 +420,12 @@
                 </select>
             </td>
             <td>
-                <div id="produtividade"></div>
+                <div class="resultado" id="produtividade"></div>
             </td>
         </tr>
         <tr>
             <td>Sociabilidade</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -432,12 +436,12 @@
                 </select>
             </td>
             <td>
-                <div id="sociabilidade"></div>
+                <div class="resultado" id="sociabilidade"></div>
             </td>
         </tr>
         <tr>
             <td>Tato</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -448,12 +452,12 @@
                 </select>
             </td>
             <td>
-                <div id="tato"></div>
+                <div class="resultado" id="tato"></div>
             </td>
         </tr>
         <tr>
             <td>Zelo</td>
-            <td><select>
+            <td><select class="pautas">
                 <option value="8">desempenho sempre acima do esperado na competência</option>
                 <option value="7.14">desempenho frequentemente acima do esperado na competência</option>
                 <option value="6.73">desempenho algumas vezes acima do esperado na competência</option>
@@ -464,20 +468,57 @@
                 </select>
             </td>
             <td>
-                <div id="zelo"></div>
+                <div class="resultado" id="zelo"></div>
             </td>
         </tr>
     </table>
     <script src="resources/jquery/dist/jquery.min.js"></script>
     <script>
-        $("select").change(function () {
+        var contador = 0
+        $(".pautas").change(function () {
             let valor = $(this).val();
             let id = $(this).attr("id");
             let dg = $('#desempenho_global').val()
             let final = parseFloat(valor * dg)
-            $("#camaradagem").empty()
-            $("#camaradagem").append(final.toFixed(2))
+            let div = $(this).parent().parent().find('td:last-child').find('div')
+            div.empty()
+            div.append(final.toFixed(2))
+            var nota = 0
+            $('.resultado').each(function () {
+                let valor = isNaN(parseFloat($(this).text())) ? 0 : parseFloat($(this).text())
+                nota += valor    
+                if(!isNaN(parseFloat($(this).text()))){
+                    contador++
+                }
+            })
+            let conceito = nota / contador
+            $('#nota_final').empty().append(conceito.toFixed(2))
+            contador = 0
         })
+        $("#desempenho_global").change(function () {
+            let valor = $(this).val();
+            $('.pautas').val(0)
+            $('.resultado').empty()
+            if(valor != 0){
+                $('table').show()
+            }
+            if(valor == 0){
+                $('table').hide()
+            }
+        })        
+        /* $("#calcular").click(function () {
+            var nota = 0
+            $('.resultado').each(function () {
+                let valor = isNaN(parseFloat($(this).text())) ? 0 : parseFloat($(this).text())
+                nota += valor    
+                if(!isNaN(parseFloat($(this).text()))){
+                    contador++
+                }
+            })
+            let final = nota / contador
+            $('#nota_final').empty().append(final.toFixed(2))
+            contador = 0
+        }) */
     </script>
 </body>
 
