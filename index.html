@@ -475,6 +475,7 @@
     <script src="resources/jquery/dist/jquery.min.js"></script>
     <script>
         var contador = 0
+        var conceito = 0
         $(".pautas").change(function () {
             let valor = $(this).val();
             let id = $(this).attr("id");
@@ -491,13 +492,14 @@
                     contador++
                 }
             })
-            let conceito = nota / contador
+            conceito = nota / contador
             $('#nota_final').empty().append(conceito.toFixed(2))
             contador = 0
         })
         $("#desempenho_global").change(function () {
             let valor = $(this).val();
             $('.pautas').val(0)
+            $('#nota_final').text('0')
             $('.resultado').empty()
             if(valor != 0){
                 $('table').show()
